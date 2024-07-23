@@ -1,0 +1,144 @@
+apiVersion: v1
+entries:
+  hello-toy:
+  - apiVersion: v2
+    appVersion: v1
+    created: "2024-07-23T23:01:14.505468851Z"
+    description: 'Run the lightweight toy web server, optionally with a custom service
+      domain name in cluster DNS e.g.   helm install my-toy-release openziti/hello-toy
+      --set serviceDomainName=my-toy-service-dns '
+    digest: 4c0ee863008172e3e40b9cd774b37987ec390f2c77a50780679f895cf667f7b1
+    name: hello-toy
+    type: application
+    urls:
+    - https://github.com/qrkourier/openziti-helm-charts/releases/download/hello-toy-3.0.2/hello-toy-3.0.2.tgz
+    version: 3.0.2
+  httpbin:
+  - apiVersion: v2
+    appVersion: latest
+    created: "2024-07-23T23:01:14.609901106Z"
+    description: Run the Ziti fork of go-httpbin
+    digest: c6d6bd1a59c23e6fff8c2f0b17525f333c26e9c15e3aa7df41773c5184c26c95
+    name: httpbin
+    type: application
+    urls:
+    - https://github.com/qrkourier/openziti-helm-charts/releases/download/httpbin-0.1.13/httpbin-0.1.13.tgz
+    version: 0.1.13
+  prometheus:
+  - apiVersion: v2
+    appVersion: 0.0.13
+    created: "2024-07-23T23:01:14.714045667Z"
+    dependencies:
+    - condition: kubeStateMetrics.enabled
+      name: kube-state-metrics
+      repository: https://prometheus-community.github.io/helm-charts
+      version: 4.0.*
+    description: Prometheus is a monitoring system and time series database.
+    digest: dba18d20d703757812a9e4d114f6dbef92fb5ca5beb513fc86f5e2505a28c3b0
+    home: https://prometheus.io/
+    icon: https://raw.githubusercontent.com/prometheus/prometheus.github.io/master/assets/prometheus_logo-cb55bb5c346.png
+    maintainers:
+    - email: help.openziti.org
+      name: OpenZiti
+    name: prometheus
+    sources:
+    - https://github.com/prometheus/alertmanager
+    - https://github.com/prometheus/prometheus
+    - https://github.com/prometheus/pushgateway
+    - https://github.com/prometheus/node_exporter
+    - https://github.com/kubernetes/kube-state-metrics
+    type: application
+    urls:
+    - https://github.com/qrkourier/openziti-helm-charts/releases/download/prometheus-0.0.11/prometheus-0.0.11.tgz
+    version: 0.0.11
+  reflect:
+  - apiVersion: v2
+    appVersion: 0.0.4
+    created: "2024-07-23T23:01:14.850578443Z"
+    description: Deploy a pod running the Ziti-embeded version of go-httpbin, a REST
+      API server.
+    digest: abc1c92f0cd8fcb5513556e1608c553080624c7bab124986346a37a4b55e402d
+    name: reflect
+    type: application
+    urls:
+    - https://github.com/qrkourier/openziti-helm-charts/releases/download/reflect-0.3.9/reflect-0.3.9.tgz
+    version: 0.3.9
+  ziti-controller:
+  - apiVersion: v3
+    appVersion: 1.1.3
+    created: "2024-07-23T23:01:14.989488156Z"
+    dependencies:
+    - condition: cert-manager.enabled
+      name: cert-manager
+      repository: https://charts.jetstack.io
+      version: ~1.11.0
+    - condition: trust-manager.enabled
+      name: trust-manager
+      repository: https://charts.jetstack.io
+      version: ~0.7.0
+    - condition: ingress-nginx.enabled
+      name: ingress-nginx
+      repository: https://kubernetes.github.io/ingress-nginx/
+      version: ~4.5.2
+    description: Host an OpenZiti controller in Kubernetes
+    digest: 8168bf79eb5f9213391d7a9490929e43cdeb548814e12926fb93efb079ad50bd
+    name: ziti-controller
+    type: application
+    urls:
+    - https://github.com/qrkourier/openziti-helm-charts/releases/download/ziti-controller-1.0.12/ziti-controller-1.0.12.tgz
+    version: 1.0.12
+  ziti-edge-tunnel:
+  - apiVersion: v2
+    appVersion: 0.22.29
+    created: "2024-07-23T23:01:15.12452019Z"
+    description: Dial OpenZiti services with a tunneler daemonset
+    digest: dd715ae71ecda38c52e62dd43ded0646d7cc233f4de89e8c0d48b8ce056ed674
+    home: https://openziti.io
+    icon: https://openziti.io/img/ziti-logo-dark.svg
+    keywords:
+    - openziti
+    - coredns
+    - node-local-dns
+    kubeVersion: '>= 1.20.0-0'
+    name: ziti-edge-tunnel
+    sources:
+    - https://github.com/openziti/ziti-tunnel-sdk-c
+    type: application
+    urls:
+    - https://github.com/qrkourier/openziti-helm-charts/releases/download/ziti-edge-tunnel-0.1.0/ziti-edge-tunnel-0.1.0.tgz
+    version: 0.1.0
+  ziti-host:
+  - apiVersion: v2
+    appVersion: 0.22.29
+    created: "2024-07-23T23:01:15.230115614Z"
+    description: Reverse proxy cluster services with an OpenZiti tunneler pod
+    digest: 02a167dbaa787fb709d183dc2787a6c786891f658f4bdd5e89f16c373336730c
+    kubeVersion: '>= 1.20.0-0'
+    name: ziti-host
+    type: application
+    urls:
+    - https://github.com/qrkourier/openziti-helm-charts/releases/download/ziti-host-0.4.12/ziti-host-0.4.12.tgz
+    version: 0.4.12
+  ziti-router:
+  - apiVersion: v3
+    appVersion: 1.1.3
+    created: "2024-07-23T23:01:15.321072984Z"
+    description: Host an OpenZiti router in Kubernetes
+    digest: 0b85ef59bc9ab39fa070846842e6df8c04bf7b8aada29c8f8054d81e87e792c4
+    name: ziti-router
+    type: application
+    urls:
+    - https://github.com/qrkourier/openziti-helm-charts/releases/download/ziti-router-1.0.7/ziti-router-1.0.7.tgz
+    version: 1.0.7
+  zrok:
+  - apiVersion: v2
+    appVersion: 0.4.30
+    created: "2024-07-23T23:01:15.426489619Z"
+    description: Run the zrok controller and zrok frontend components as a K8s deployment
+    digest: 4b8c385f43cdd5f4e5658be2a87bf5c5b048b19083f189367af4bea0b4dc4b6a
+    name: zrok
+    type: application
+    urls:
+    - https://github.com/qrkourier/openziti-helm-charts/releases/download/zrok-0.2.4/zrok-0.2.4.tgz
+    version: 0.2.4
+generated: "2024-07-23T23:01:15.426496672Z"
