@@ -19,4 +19,4 @@ jobs:
             basePaths: 'charts'
             prefixes: 'release-notes'
             delimiter: ':'
-            layers: 1
+            layers: 2
