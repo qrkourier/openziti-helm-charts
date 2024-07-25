@@ -22,7 +22,7 @@ jobs:
         with:
             authToken: ${{ secrets.GITHUB_TOKEN }}
             basePaths: 'charts'
-            prefixes: 'skip'
+            prefixes: 'notes|skip'
             includedGlob: ""  # no filter
             debugShowPaths: true
             layers: 1
