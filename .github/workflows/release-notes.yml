@@ -1,11 +1,11 @@
-name: Update Release Notes
+name: Release Notes Labeler
 
 on:
   pull_request:
     types: [opened, synchronize, reopened]
 
 jobs:
-  update-release-notes:
+  release-notes-labeler:
     permissions:
       contents: read
       pull-requests: write
@@ -17,11 +17,18 @@ jobs:
 
       # GitHub's release notes generator uses these lables to select PRs to include
       - name: Label Pull Request by Changed Charts
+        id: labeler
         uses: maxisam/changed-files-labeler@v0.1.1
         with:
             authToken: ${{ secrets.GITHUB_TOKEN }}
             basePaths: 'charts'
-            prefixes: 'release-notes'
-            delimiter: ':'
+            prefixes: 'skip'
             includedGlob: ""  # no filter
-            layers: 0
+            debugShowPaths: true
+            layers: 1
+
+      - name: Debug Labeler
+        run: |
+          echo "Labels: ${{ steps.labeler.outputs.labels }}"
+          echo "Paths: ${{ steps.labeler.outputs.paths }}"
+          echo "Changed: ${{ steps.labeler.outputs.changed }}"
