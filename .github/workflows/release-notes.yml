@@ -19,4 +19,5 @@ jobs:
             basePaths: 'charts'
             prefixes: 'release-notes'
             delimiter: ':'
-            layers: 2
+            includedGlob: ""  # no filter
+            layers: 1
