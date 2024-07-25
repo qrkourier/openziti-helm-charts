@@ -24,4 +24,4 @@ jobs:
             prefixes: 'release-notes'
             delimiter: ':'
             includedGlob: ""  # no filter
-            layers: 1
+            layers: 0
