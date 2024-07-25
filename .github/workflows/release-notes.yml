@@ -1,8 +1,8 @@
 name: Update Release Notes
 
 on:
-  release:
-    types: [published]
+  pull_request:
+    types: [opened, synchronize, reopened]
 
 jobs:
   update-release-notes:
@@ -11,14 +11,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Build Changelog
-        id: changelog_builder
-        uses: mikepenz/release-changelog-builder-action@v4
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Update Release with Changelog
-        uses: meeDamian/github-release@2.0
+      # GitHub's release notes generator uses these lables to select PRs to include
+      - name: Label Pull Request by Changed Charts
+        uses: maxisam/changed-files-labeler@0.1.1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          body: ${{ steps.changelog_builder.outputs.changelog }}
+            authToken: ${{ secrets.GITHUB_TOKEN }}
+            basePaths: 'charts'
+            prefixes: 'release-notes'
+            delimiter: ':'
+            layers: 1
