@@ -16,6 +16,16 @@ entries:
   httpbin:
   - apiVersion: v2
     appVersion: latest
+    created: "2026-03-04T17:53:53.668154274Z"
+    description: Run the Ziti fork of go-httpbin
+    digest: 5d27b4d3143b138a52376b936bce89e21c9fdaa6f78dbda8c37beba89840e0ad
+    name: httpbin
+    type: application
+    urls:
+    - https://github.com/qrkourier/openziti-helm-charts/releases/download/httpbin-0.3.0/httpbin-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v2
+    appVersion: latest
     created: "2024-07-23T23:01:14.609901106Z"
     description: Run the Ziti fork of go-httpbin
     digest: c6d6bd1a59c23e6fff8c2f0b17525f333c26e9c15e3aa7df41773c5184c26c95
@@ -75,6 +85,16 @@ entries:
     - https://github.com/qrkourier/openziti-helm-charts/releases/download/ziti-browzer-bootstrapper-0.1.1/ziti-browzer-bootstrapper-0.1.1.tgz
     version: 0.1.1
   ziti-controller:
+  - apiVersion: v2
+    appVersion: 2.0.0-pre1
+    created: "2026-03-04T17:53:53.80235908Z"
+    description: Host an OpenZiti controller in Kubernetes
+    digest: 149ebea6db2149fe1f1938face938fab43e823efd4e92d9ccf410658a0615263
+    name: ziti-controller
+    type: application
+    urls:
+    - https://github.com/qrkourier/openziti-helm-charts/releases/download/ziti-controller-3.2.0-pre1/ziti-controller-3.2.0-pre1.tgz
+    version: 3.2.0-pre1
   - apiVersion: v2
     appVersion: 1.3.3
     created: "2025-03-03T19:07:39.970481406Z"
@@ -261,6 +281,24 @@ entries:
     version: 1.0.12
   ziti-edge-tunnel:
   - apiVersion: v2
+    appVersion: 1.7.13
+    created: "2026-03-04T17:53:53.959798415Z"
+    description: Dial OpenZiti services with a tunneler daemonset
+    digest: bbebc982d96f1d3f421c4e97adcb0328ef3aad268f124d1646a45a82ecaa6402
+    icon: https://openziti.io/img/ziti-logo-dark.svg
+    keywords:
+    - openziti
+    - coredns
+    - node-local-dns
+    kubeVersion: '>= 1.20.0-0'
+    name: ziti-edge-tunnel
+    sources:
+    - https://github.com/openziti/ziti-tunnel-sdk-c
+    type: application
+    urls:
+    - https://github.com/qrkourier/openziti-helm-charts/releases/download/ziti-edge-tunnel-1.3.0/ziti-edge-tunnel-1.3.0.tgz
+    version: 1.3.0
+  - apiVersion: v2
     appVersion: 1.3.9
     created: "2025-03-03T19:07:40.065805446Z"
     description: Dial OpenZiti services with a tunneler daemonset
@@ -300,6 +338,17 @@ entries:
     version: 0.1.0
   ziti-host:
   - apiVersion: v2
+    appVersion: 1.7.19
+    created: "2026-03-04T17:53:54.131751246Z"
+    description: Reverse proxy cluster services with an OpenZiti tunneler pod
+    digest: c4f1721a8e1fd281bff7bdb2ec7f32361a7283a8e5f98b8f72c29892e544580c
+    kubeVersion: '>= 1.20.0-0'
+    name: ziti-host
+    type: application
+    urls:
+    - https://github.com/qrkourier/openziti-helm-charts/releases/download/ziti-host-1.2.1/ziti-host-1.2.1.tgz
+    version: 1.2.1
+  - apiVersion: v2
     appVersion: 1.3.9
     created: "2025-03-03T19:07:40.18443991Z"
     description: Reverse proxy cluster services with an OpenZiti tunneler pod
@@ -322,6 +371,16 @@ entries:
     - https://github.com/qrkourier/openziti-helm-charts/releases/download/ziti-host-0.4.12/ziti-host-0.4.12.tgz
     version: 0.4.12
   ziti-router:
+  - apiVersion: v2
+    appVersion: 2.0.0-pre1
+    created: "2026-03-04T17:53:54.345797029Z"
+    description: Host an OpenZiti router in Kubernetes
+    digest: 0849e2b2aa781fed15cf8ade1c4006ed8f367f233625adbbeec9a5b64f2b840a
+    name: ziti-router
+    type: application
+    urls:
+    - https://github.com/qrkourier/openziti-helm-charts/releases/download/ziti-router-3.0.0-pre1/ziti-router-3.0.0-pre1.tgz
+    version: 3.0.0-pre1
   - apiVersion: v2
     appVersion: 1.3.3
     created: "2025-03-03T19:07:40.297224136Z"
@@ -364,6 +423,16 @@ entries:
     version: 1.0.7
   zrok:
   - apiVersion: v2
+    appVersion: 1.1.11
+    created: "2026-03-04T17:53:54.485057586Z"
+    description: Run the zrok controller and zrok frontend components as a K8s deployment
+    digest: 05b1ea884178300efb87240990c6dd24f986e88518140621b79eb6ad315fb558
+    name: zrok
+    type: application
+    urls:
+    - https://github.com/qrkourier/openziti-helm-charts/releases/download/zrok-1.2.2/zrok-1.2.2.tgz
+    version: 1.2.2
+  - apiVersion: v2
     appVersion: 1.0.0-rc6
     created: "2025-03-03T19:09:21.083374463Z"
     description: Run the zrok controller and zrok frontend components as a K8s deployment
@@ -393,4 +462,4 @@ entries:
     urls:
     - https://github.com/qrkourier/openziti-helm-charts/releases/download/zrok-0.2.4/zrok-0.2.4.tgz
     version: 0.2.4
-generated: "2025-03-03T19:09:21.083418465Z"
+generated: "2026-03-04T17:53:54.48514086Z"
